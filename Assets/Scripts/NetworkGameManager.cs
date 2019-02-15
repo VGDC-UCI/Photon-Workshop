@@ -14,11 +14,11 @@ public class NetworkGameManager : MonoBehaviourPunCallbacks
 	{
 		if(PhotonNetwork.IsMasterClient)
 		{
-			localPlayerInstance = Instantiate(playerPrefab, Vector3.left, Quaternion.identity);
+			localPlayerInstance = PhotonNetwork.Instantiate("Player", Vector3.left, Quaternion.identity);
 		}
 		else
 		{
-			localPlayerInstance = Instantiate(playerPrefab, Vector3.right, Quaternion.identity);
+			localPlayerInstance = PhotonNetwork.Instantiate("Player", Vector3.right, Quaternion.identity);
 		}
 	}
 }
